@@ -6,7 +6,7 @@ body{
 .container {
     width: 100vw;
     height: 55vh;
-    background: #6C7A89;
+    background: #A7C3F5;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -19,25 +19,36 @@ body{
     background: #fff;
     border-radius: 30px;
     padding: 1%;
+    border-style: solid;
+    border-color: #614895;
+    transition-duration: 0.7s;
+    -webkit-transition-duration: 0.7s;
+    }
+.box:hover{
+        background-color: #614895;
+        color: #fff;
     }
 .calcular{
     text-align: center;
-    background-color: #6C7A89;
+    background-color: #A7C3F5;
     padding: 1%;
     border-bottom-left-radius: -50px;
-    border-bottom-right-radius: 50px;
+    border-bottom-right-radius: -50px;
 }
 .botao{
     background-color: none;
     border-radius: 30px;
-    border-color: rgba(30, 138, 53, 0.253);
+    border-color: #614895;
     padding: 1%;
     font-family: 'Bebas Neue','Courier New','Helvetica', Courier, monospace;
     font-size: 190%;
+    width: 35%;
+    transition-duration: 0.7s;
+    -webkit-transition-duration: 0.7s;
 }
 .botao:hover{
-    background-color: rgba(30, 138, 53, 0.253);
-    transition-duration: 0.7s;
+    background-color: #614895;
+    color: #fff;
 }
 #resultado{
     font-size: 250%;
