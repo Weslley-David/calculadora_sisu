@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculadora SISU</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="container">
+		<div class="box">
+		<table>
+			<tr>
+				<td></td>
+				<td>Nota</td>
+				<td>Peso</td>
+			</tr>
+			<tr>
+				<td>Matemática e suas tecnologias:</td>
+				<td><input id='matematica' type="number"></td>
+				<td><input id='peso_mat'type="number"></td>
+			</tr>
+			<tr> 
+				<td>Linguagens e Códigos:</td>
+				<td><input id='linguagens' type="number"></td>
+				<td><input id='peso_lin' type="number"></td>
+			</tr>
+			<tr>
+				<td>Ciências Humanas e suas Tecnologias:</td>
+				<td><input id="humanas" type="number"></td>
+				<td><input id='peso_hum' type="number"></td>
+			</tr>
+			<tr>
+				<td>Ciências Naturais e suas tecnologias:</td>
+				<td><input  id="natureza" type="number"></td>
+				<td><input id='peso_nat' type="number"></td>
+			</tr>
+			<tr>
+				<td>Redação:</td>
+				<td><input id="redacao" type="number"></td>
+				<td><input id='peso_red' type="number"></td>
+			</tr>
+		</table>
+		</div>
+		</div>
+		<div class="calcular">
+			<input class="botao" onclick="calcular()" type="button" value="calcular">
+		</div>
+	<p id="resultado"> Sua Nota Final</p>
+<script type="text/javascript">
+function calcular(){
+		console.log("funciona")
+        //Variáveis
+		var i = 0;
+        let result = 0;
+		var materias_colect = new Array('matematica', 'linguagens', 'humanas', 'natureza', 'redacao');
+        var peso_colect = new Array('peso_mat', 'peso_lin', 'peso_hum', 'peso_nat', 'peso_red')
+		var nota = new Array(5);
+		var peso = new Array(5);
+
+        //coleta os dados
+		while(i < 5) {
+			nota[i] = Number(document.getElementById(materias_colect[i]).value);
+            peso[i] = Number(document.getElementById(peso_colect[i]).value);
+			i = i + 1;
+		}
+        i = 0;
+        //processa o resultado || média ponderada
+        result = ((nota[0] * peso[0]) + (nota[1] * peso[1]) + (nota[2] * peso[2]) + (nota[3] * peso[3]) + (nota[4] * peso[4])) 
+        result = result /(peso[0] + peso[1] + peso[2] + peso[3] +peso[4])
+       console.log(result)
+
+        //Exibe o resultado
+        document.getElementById('resultado').innerHTML = result.toFixed(2);
+	}
+</script>
+</body>
+</html>
